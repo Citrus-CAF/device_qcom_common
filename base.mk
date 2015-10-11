@@ -519,7 +519,7 @@ LIBQDUTILS := libqdutils
 LIBQDMETADATA := libqdMetaData
 
 #LIBPOWER
-LIBPOWER := power.qcom
+LIBPOWER := power.$(TARGET_BOARD_PLATFORM)
 
 #LLVM for RenderScript
 #use qcom LLVM
