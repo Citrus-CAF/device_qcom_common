@@ -546,7 +546,8 @@ LIBQDMETADATA := libqdMetaData
 LIBQDMETADATA += libqdMetaData.system
 
 #LIBPOWER
-LIBPOWER := power.qcom
+LIBPOWER := power.$(TARGET_BOARD_PLATFORM)
+
 #LIBPOWER -- Add HIDL Packages
 LIBPOWER += android.hardware.power@1.0-impl
 LIBPOWER += android.hardware.power@1.0-service
