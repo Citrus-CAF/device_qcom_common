@@ -13,6 +13,9 @@ ifndef PRODUCT_MANUFACTURER
 PRODUCT_MANUFACTURER := QUALCOMM
 endif
 
+# include definitions for SDCLANG
+include device/qcom/common/sdclang/sdclang.mk
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     persist.radio.apm_sim_not_pwdn=1 \
