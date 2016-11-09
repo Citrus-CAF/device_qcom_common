@@ -795,9 +795,6 @@ PRODUCT_PACKAGES += librecovery_updater_msm
 # vcard jar
 PRODUCT_PACKAGES += vcard
 
-# tcmiface for tcm support
-PRODUCT_PACKAGES += tcmiface
-
 # healthd libaray expanded for mode charger
 PRODUCT_PACKAGES += libhealthd.msm
 
