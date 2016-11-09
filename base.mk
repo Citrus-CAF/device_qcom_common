@@ -700,42 +700,6 @@ WLAN += qca_cld_wlan.ko
 FSTMAN := fstman
 FSTMAN += fstman.ini
 
-PRODUCT_PACKAGES := \
-    AccountAndSyncSettings \
-    DeskClock \
-    AlarmProvider \
-    Bluetooth \
-    Calculator \
-    Calendar \
-    Camera \
-    CellBroadcastReceiver \
-    CertInstaller \
-    DrmProvider \
-    Email \
-    Gallery2 \
-    LatinIME \
-    Mms \
-    Music \
-    Phone \
-    Provision \
-    Protips \
-    QuickSearchBox \
-    Settings \
-    Sync \
-    SystemUI \
-    Updater \
-    CalendarProvider \
-    SyncProvider \
-    SoundRecorder \
-    IM \
-    VoiceDialer \
-    FM2 \
-    FMRecord \
-    VideoEditor \
-    SnapdragonGallery \
-    SnapdragonLauncher \
-    SnapdragonMusic
-
 ifneq ($(TARGET_USES_AOSP),true)
 PRODUCT_PACKAGES += \
        BluetoothExt \
