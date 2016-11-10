@@ -2,7 +2,7 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 # files that live under device/qcom/common/rootdir/etc/
-
+ifneq ($(strip $(TARGET_USE_CM_RAMDISK)),true)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.early_boot.sh
 LOCAL_MODULE_TAGS  := optional eng
@@ -243,3 +243,5 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
     LOCAL_MODULE_PATH  := $(TARGET_ROOT_OUT)
     include $(BUILD_PREBUILT)
 endif
+
+endif # TARGET_USE_CM_RAMDISK
