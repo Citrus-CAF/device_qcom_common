@@ -13,8 +13,14 @@ ifndef PRODUCT_MANUFACTURER
 PRODUCT_MANUFACTURER := QUALCOMM
 endif
 
+ifneq ($(HOST_OS),linux)
+$(warning ****************************************************************)
+$(warning * SDCLANG is not supported on non-linux hosts. Disabling...)
+$(warning ****************************************************************)
+else
 # include definitions for SDCLANG
 include device/qcom/common/sdclang/sdclang.mk
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
