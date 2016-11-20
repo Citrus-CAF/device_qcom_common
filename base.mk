@@ -166,9 +166,6 @@ CHROMIUM += libwebviewchromium_plat_support
 #CIMAX
 CIMAX := libcimax_spi
 
-#CM
-CM :=CMFileManager
-#CM += Trebuchet
 
 #Default Launcher
 DELAUN := Launcher3
@@ -700,42 +697,6 @@ WLAN += qca_cld_wlan.ko
 FSTMAN := fstman
 FSTMAN += fstman.ini
 
-PRODUCT_PACKAGES := \
-    AccountAndSyncSettings \
-    DeskClock \
-    AlarmProvider \
-    Bluetooth \
-    Calculator \
-    Calendar \
-    Camera \
-    CellBroadcastReceiver \
-    CertInstaller \
-    DrmProvider \
-    Email \
-    Gallery2 \
-    LatinIME \
-    Mms \
-    Music \
-    Phone \
-    Provision \
-    Protips \
-    QuickSearchBox \
-    Settings \
-    Sync \
-    SystemUI \
-    Updater \
-    CalendarProvider \
-    SyncProvider \
-    SoundRecorder \
-    IM \
-    VoiceDialer \
-    FM2 \
-    FMRecord \
-    VideoEditor \
-    SnapdragonGallery \
-    SnapdragonLauncher \
-    SnapdragonMusic
-
 ifneq ($(TARGET_USES_AOSP),true)
 PRODUCT_PACKAGES += \
        BluetoothExt \
@@ -758,7 +719,6 @@ PRODUCT_PACKAGES += $(BT)
 PRODUCT_PACKAGES += $(C2DCC)
 PRODUCT_PACKAGES += $(CHROMIUM)
 PRODUCT_PACKAGES += $(CIMAX)
-PRODUCT_PACKAGES += $(CM)
 PRODUCT_PACKAGES += $(DELAUN)
 PRODUCT_PACKAGES += $(RCS)
 PRODUCT_PACKAGES += $(CONNECTIVITY)
