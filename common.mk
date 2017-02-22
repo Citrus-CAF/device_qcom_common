@@ -9,9 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 PRODUCT_BRAND := qcom
 PRODUCT_AAPT_CONFIG += hdpi mdpi
 
-ifndef PRODUCT_MANUFACTURER
 PRODUCT_MANUFACTURER := QUALCOMM
-endif
 
 ifneq ($(HOST_OS),linux)
 $(warning ****************************************************************)
@@ -25,8 +23,9 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
     persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.custom_ecc=1\
-    persist.radio.sib16_support=1
+    persist.radio.custom_ecc=1 \
+    persist.radio.sib16_support=1 \
+    persist.radio.multisim.config=dsds
 
 ifneq ($(BOARD_FRP_PARTITION_NAME),)
     PRODUCT_PROPERTY_OVERRIDES += ro.frp.pst=/dev/block/bootdevice/by-name/$(BOARD_FRP_PARTITION_NAME)
