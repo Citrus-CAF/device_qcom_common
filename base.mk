@@ -911,7 +911,7 @@ PRODUCT_COPY_FILES := \
 PRODUCT_COPY_FILES += \
     device/qcom/common/sec_config:system/etc/sec_config
 
-ifneq ($(USE_DEVICE_AUDIO_CONFIGS), true)
+ifneq ($(filter gemini oneplus3,$(TARGET_DEVICE)),)
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
