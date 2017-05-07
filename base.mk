@@ -178,7 +178,6 @@ EXTENDEDMEDIA_EXT += libextendedmediaextractor_jni
 EXTENDEDMEDIA_EXT += extendedmediaextractor
 EXTENDEDMEDIA_EXT += ExtendedMediaPlayer
 
-
 #DATA_OS
 DATA_OS := librmnetctl
 DATA_OS += rmnetcli
@@ -711,7 +710,7 @@ PRODUCT_PACKAGES += $(LIBPERFLOCK)
 PRODUCT_PACKAGES += $(LIBQCOMUI)
 PRODUCT_PACKAGES += $(LIBQDUTILS)
 PRODUCT_PACKAGES += $(LIBQDMETADATA)
-PRODUCT_PACKAGES += $(LIBPOWER)
+#PRODUCT_PACKAGES += $(LIBPOWER)
 PRODUCT_PACKAGES += $(LOC_API)
 PRODUCT_PACKAGES += $(MEDIA_PROFILES)
 PRODUCT_PACKAGES += $(MM_AUDIO)
@@ -762,13 +761,13 @@ PRODUCT_PACKAGES += qcril.db
 PRODUCT_PACKAGES += flatland
 
 # MSM updater library
-PRODUCT_PACKAGES += librecovery_updater_msm
+#PRODUCT_PACKAGES += librecovery_updater_msm
 
 # vcard jar
 PRODUCT_PACKAGES += vcard
 
 # healthd libaray expanded for mode charger
-PRODUCT_PACKAGES += libhealthd.msm
+#PRODUCT_PACKAGES += libhealthd.msm
 
 #intialise PRODUCT_PACKAGES_DEBUG list for debug modules
 PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
@@ -808,15 +807,16 @@ PRODUCT_COPY_FILES := \
     system/bluetooth/data/stack.conf:system/etc/bluetooth/stack.conf
 #endif # BOARD_HAVE_BLUETOOTH_BLUEZ
 
+ifneq ($(filter hydrogen kenzo,$(TARGET_DEVICE)),)
 # gps/location secuity configuration file
 PRODUCT_COPY_FILES += \
     device/qcom/common/sec_config:system/etc/sec_config
+endif
 
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/qcom/common/media/media_profiles.xml:system/etc/media_profiles.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_COPY_FILES += \
