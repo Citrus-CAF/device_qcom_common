@@ -1,7 +1,6 @@
-ifneq ($(TARGET_PROVIDES_POWERHAL), true)
-LOCAL_PATH := $(call my-dir)
+ifeq ($(TARGET_POWERHAL_VARIANT),qcom)
 
-ifeq ($(call is-vendor-board-platform,QCOM),true)
+LOCAL_PATH := $(call my-dir)
 
 # HAL module implemenation stored in
 # hw/<POWERS_HARDWARE_MODULE_ID>.<ro.hardware>.so
@@ -67,5 +66,4 @@ LOCAL_MODULE := power.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
 
-endif
 endif
