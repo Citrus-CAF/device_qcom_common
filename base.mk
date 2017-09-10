@@ -160,7 +160,7 @@ BT += libbt-vendor
 BT += libbthost_if
 BT += libbt-logClient
 BT += bt_logger
-BT += libbt-hidlclient
+#BT += libbt-hidlclient
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/qcom/common
 
 #C2DColorConvert
@@ -379,7 +379,7 @@ LIBCAMERA += libmmjpeg_interface
 LIBCAMERA += libmmlib2d_interface
 LIBCAMERA += libqomx_core
 LIBCAMERA += mm-qcamera-app
-LIBCAMERA += camera_test
+#LIBCAMERA += camera_test
 LIBCAMERA += org.codeaurora.camera
 
 #LIBCOPYBIT
@@ -759,22 +759,15 @@ PRODUCT_PACKAGES := \
     AlarmProvider \
     Bluetooth \
     BluetoothExt \
-    Calculator \
-    Calendar \
-    Camera \
     CellBroadcastReceiver \
     CertInstaller \
     DrmProvider \
-    Email \
-    Gallery2 \
     LatinIME \
     Mms \
-    Music \
     netutils-wrapper-1.0 \
     Phone \
     Provision \
     Protips \
-    QuickSearchBox \
     Settings \
     Sync \
     SystemUI \
@@ -784,35 +777,30 @@ PRODUCT_PACKAGES := \
     SoundRecorder \
     IM \
     VoiceDialer \
-    FM2 \
-    FMRecord \
     VideoEditor \
-    SnapdragonGallery \
-    SnapdragonLauncher \
-    SnapdragonMusic \
     a4wpservice \
     wipowerservice
 
-PRODUCT_PACKAGES += $(ALSA_HARDWARE)
-PRODUCT_PACKAGES += $(ALSA_UCM)
+#PRODUCT_PACKAGES += $(ALSA_HARDWARE)
+#PRODUCT_PACKAGES += $(ALSA_UCM)
 PRODUCT_PACKAGES += $(ANGLE)
 PRODUCT_PACKAGES += $(APPOPS_POLICY)
-PRODUCT_PACKAGES += $(AUDIO_HARDWARE)
-PRODUCT_PACKAGES += $(AUDIO_POLICY)
-PRODUCT_PACKAGES += $(TINY_ALSA_TEST_APPS)
+#PRODUCT_PACKAGES += $(AUDIO_HARDWARE)
+#PRODUCT_PACKAGES += $(AUDIO_POLICY)
+#PRODUCT_PACKAGES += $(TINY_ALSA_TEST_APPS)
 PRODUCT_PACKAGES += $(AMPLOADER)
 PRODUCT_PACKAGES += $(APPS)
-PRODUCT_PACKAGES += $(BRCTL)
+#PRODUCT_PACKAGES += $(BRCTL)
 PRODUCT_PACKAGES += $(BSON)
-PRODUCT_PACKAGES += $(BT)
+#PRODUCT_PACKAGES += $(BT)
 PRODUCT_PACKAGES += $(C2DCC)
 PRODUCT_PACKAGES += $(CHROMIUM)
 PRODUCT_PACKAGES += $(CIMAX)
-PRODUCT_PACKAGES += $(CM)
+#PRODUCT_PACKAGES += $(CM)
 PRODUCT_PACKAGES += $(DELAUN)
 PRODUCT_PACKAGES += $(RCS)
 PRODUCT_PACKAGES += $(CONNECTIVITY)
-PRODUCT_PACKAGES += $(CHARGER)
+#PRODUCT_PACKAGES += $(CHARGER)
 PRODUCT_PACKAGES += $(CURL)
 PRODUCT_PACKAGES += $(DASH)
 PRODUCT_PACKAGES += $(DATA_OS)
@@ -820,41 +808,41 @@ PRODUCT_PACKAGES += $(E2FSPROGS)
 PRODUCT_PACKAGES += $(EBTABLES)
 PRODUCT_PACKAGES += $(EXTENDEDMEDIA_EXT)
 PRODUCT_PACKAGES += $(FASTPOWERON)
-PRODUCT_PACKAGES += $(FM)
-PRODUCT_PACKAGES += $(GPS_HARDWARE)
+#PRODUCT_PACKAGES += $(FM)
+#PRODUCT_PACKAGES += $(GPS_HARDWARE)
 PRODUCT_PACKAGES += $(HDMID)
-PRODUCT_PACKAGES += $(HOSTAPD)
+#PRODUCT_PACKAGES += $(HOSTAPD)
 PRODUCT_PACKAGES += $(I420CC)
-PRODUCT_PACKAGES += $(INIT)
+#RODUCT_PACKAGES += $(INIT)
 PRODUCT_PACKAGES += $(IPROUTE2)
 PRODUCT_PACKAGES += $(IPTABLES)
-PRODUCT_PACKAGES += $(KERNEL_TESTS)
+#PRODUCT_PACKAGES += $(KERNEL_TESTS)
 PRODUCT_PACKAGES += $(KEYPAD)
 PRODUCT_PACKAGES += $(KS)
 PRODUCT_PACKAGES += $(LIB_NL)
 PRODUCT_PACKAGES += $(LIB_XML2)
-PRODUCT_PACKAGES += $(LIBCAMERA)
+#PRODUCT_PACKAGES += $(LIBCAMERA)
 PRODUCT_PACKAGES += $(LIBGESTURES)
-PRODUCT_PACKAGES += $(LIBCOPYBIT)
-PRODUCT_PACKAGES += $(LIBGRALLOC)
-PRODUCT_PACKAGES += $(LIBMEMTRACK)
-PRODUCT_PACKAGES += $(LIBLIGHTS)
-PRODUCT_PACKAGES += $(LIBAUDIOPARAM)
-PRODUCT_PACKAGES += $(LIBAUDIORESAMPLER)
+#PRODUCT_PACKAGES += $(LIBCOPYBIT)
+#PRODUCT_PACKAGES += $(LIBGRALLOC)
+#PRODUCT_PACKAGES += $(LIBMEMTRACK)
+#PRODUCT_PACKAGES += $(LIBLIGHTS)
+#PRODUCT_PACKAGES += $(LIBAUDIOPARAM)
+#PRODUCT_PACKAGES += $(LIBAUDIORESAMPLER)
 PRODUCT_PACKAGES += $(LIBOPENCOREHW)
 PRODUCT_PACKAGES += $(LIBOVERLAY)
-PRODUCT_PACKAGES += $(LIBHWCOMPOSER)
+#PRODUCT_PACKAGES += $(LIBHWCOMPOSER)
 PRODUCT_PACKAGES += $(LIBGENLOCK)
-PRODUCT_PACKAGES += $(LIBPERFLOCK)
+#PRODUCT_PACKAGES += $(LIBPERFLOCK)
 PRODUCT_PACKAGES += $(LIBQCOMUI)
-PRODUCT_PACKAGES += $(LIBQDUTILS)
-PRODUCT_PACKAGES += $(LIBQDMETADATA)
+#PRODUCT_PACKAGES += $(LIBQDUTILS)
+#PRODUCT_PACKAGES += $(LIBQDMETADATA)
 PRODUCT_PACKAGES += $(LIBPOWER)
-PRODUCT_PACKAGES += $(LOC_API)
-PRODUCT_PACKAGES += $(MEDIA_PROFILES)
-PRODUCT_PACKAGES += $(MM_AUDIO)
-PRODUCT_PACKAGES += $(MM_CORE)
-PRODUCT_PACKAGES += $(MM_VIDEO)
+#PRODUCT_PACKAGES += $(LOC_API)
+#PRODUCT_PACKAGES += $(MEDIA_PROFILES)
+#PRODUCT_PACKAGES += $(MM_AUDIO)
+#PRODUCT_PACKAGES += $(MM_CORE)
+#PRODUCT_PACKAGES += $(MM_VIDEO)
 ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_PACKAGES += $(NQ_NFC)
 PRODUCT_BOOT_JARS += com.nxp.nfc.nq
@@ -864,13 +852,13 @@ PRODUCT_PACKAGES += $(PPP)
 PRODUCT_PACKAGES += $(PROTOBUF)
 PRODUCT_PACKAGES += $(PVOMX)
 PRODUCT_PACKAGES += $(RF4CE)
-PRODUCT_PACKAGES += $(SENSORS_HARDWARE)
+#PRODUCT_PACKAGES += $(SENSORS_HARDWARE)
 #PRODUCT_PACKAGES += $(SOFTAP)
 PRODUCT_PACKAGES += $(STK)
 PRODUCT_PACKAGES += $(STMLOG)
-PRODUCT_PACKAGES += $(THERMAL_HAL)
+#PRODUCT_PACKAGES += $(THERMAL_HAL)
 PRODUCT_PACKAGES += $(TSLIB_EXTERNAL)
-PRODUCT_PACKAGES += $(VR_HAL)
+#PRODUCT_PACKAGES += $(VR_HAL)
 PRODUCT_PACKAGES += $(QRGND)
 PRODUCT_PACKAGES += $(UPDATER)
 PRODUCT_PACKAGES += $(WPA)
@@ -882,7 +870,7 @@ PRODUCT_PACKAGES += $(CRDA)
 PRODUCT_PACKAGES += $(WLAN)
 PRODUCT_PACKAGES += $(IPACM)
 PRODUCT_PACKAGES += $(FSTMAN)
-PRODUCT_PACKAGES += $(WIGIG)
+#PRODUCT_PACKAGES += $(WIGIG)
 PRODUCT_PACKAGES += $(IMS_EXT)
 # Temp workarround for b/36603742
 PRODUCT_PACKAGES += android.hidl.manager@1.0-java
@@ -906,7 +894,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += qcril.db
 
 # MSM updater library
-PRODUCT_PACKAGES += librecovery_updater_msm
+#PRODUCT_PACKAGES += librecovery_updater_msm
 
 # vcard jar
 PRODUCT_PACKAGES += vcard
@@ -915,14 +903,14 @@ PRODUCT_PACKAGES += vcard
 PRODUCT_PACKAGES += tcmiface
 
 # healthd libaray expanded for mode charger
-PRODUCT_PACKAGES += libhealthd.msm
+#PRODUCT_PACKAGES += libhealthd.msm
 
 #intialise PRODUCT_PACKAGES_DEBUG list for debug modules
-PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
+##PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
 
 #Add init.qcom.test.rc to PRODUCT_PACKAGES_DEBUG list
-PRODUCT_PACKAGES_DEBUG += init.qcom.test.rc
-PRODUCT_PACKAGES_DEBUG += init.qcom.debug.sh
+#PRODUCT_PACKAGES_DEBUG += init.qcom.test.rc
+#PRODUCT_PACKAGES_DEBUG += init.qcom.debug.sh
 
 #NANOPB_LIBRARY_NAME := libnanopb-c-2.8.0
 
@@ -962,21 +950,21 @@ PRODUCT_COPY_FILES := \
 #endif # BOARD_HAVE_BLUETOOTH_BLUEZ
 
 # gps/location secuity configuration file
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     device/qcom/common/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 #copy codecs_xxx.xml to (TARGET_COPY_OUT_VENDOR)/etc/
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
-    device/qcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
-    device/qcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
+#    device/qcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
+#    device/qcom/common/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-ifneq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS),true)
-PRODUCT_COPY_FILES += \
+#ifneq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS),true)
+#PRODUCT_COPY_FILES += \
     device/qcom/common/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml
-endif
+#endif
 
 ifeq ($(strip $(TARGET_USES_NQ_NFC)),true)
 PRODUCT_COPY_FILES += \
@@ -1010,7 +998,7 @@ else
      TARGET_KERNEL_SOURCE := kernel/msm-$(TARGET_KERNEL_VERSION)
 endif
 # include additional build utilities
--include device/qcom/common/utils.mk
+#-include device/qcom/common/utils.mk
 
 #Enabling Ring Tones
 #include frameworks/base/data/sounds/OriginalAudio.mk
@@ -1019,13 +1007,13 @@ endif
 -include frameworks/base/data/videos/VideoPackage1.mk
 
 # dm-verity definitions
-ifneq ($(BOARD_AVB_ENABLE), true)
-   PRODUCT_SYSTEM_VERITY_PARTITION=/dev/block/bootdevice/by-name/system
-   ifeq ($(ENABLE_VENDOR_IMAGE), true)
-      PRODUCT_VENDOR_VERITY_PARTITION=/dev/block/bootdevice/by-name/vendor
-   endif
-   $(call inherit-product, build/target/product/verity.mk)
-endif
+#ifneq ($(BOARD_AVB_ENABLE), true)
+#   PRODUCT_SYSTEM_VERITY_PARTITION=/dev/block/bootdevice/by-name/system
+#   ifeq ($(ENABLE_VENDOR_IMAGE), true)
+#      PRODUCT_VENDOR_VERITY_PARTITION=/dev/block/bootdevice/by-name/vendor
+#   endif
+#   $(call inherit-product, build/target/product/verity.mk)
+#endif
 
 #skip boot jars check
 SKIP_BOOT_JARS_CHECK := true
@@ -1041,7 +1029,7 @@ PRODUCT_BOOT_JARS += com.qualcomm.qti.camera
 endif
 
 # Preloading QPerformance jar to ensure faster perflocks in Boost Framework
-PRODUCT_BOOT_JARS += QPerformance
+#PRODUCT_BOOT_JARS += QPerformance
 
 # OEM Unlock reporting
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
