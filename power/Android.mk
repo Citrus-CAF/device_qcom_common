@@ -1,3 +1,4 @@
+ifeq ($(TARGET_POWERHAL_VARIANT),qcom)
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(call is-vendor-board-platform,QCOM),true)
@@ -86,3 +87,4 @@ LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
 endif
+endif #TARGET_POWERHAL_VARIANT
