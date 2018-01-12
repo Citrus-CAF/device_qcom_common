@@ -1,3 +1,4 @@
+ifeq ($(TARGET_INCLUDE_QCOM_VNDK),true)
 LOCAL_PATH := $(call my-dir)
 
 include $(LOCAL_PATH)/vndk-sp-libs.mk
@@ -40,3 +41,4 @@ LOCAL_MODULE := vndk-sp
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES))
 include $(BUILD_PHONY_PACKAGE)
+endif
