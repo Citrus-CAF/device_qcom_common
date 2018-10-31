@@ -731,6 +731,7 @@ THERMAL_HAL += thermal.msm8996
 THERMAL_HAL += thermal.msm8953
 THERMAL_HAL += thermal.msm8937
 THERMAL_HAL += thermal.msmnile
+THERMAL_HAL += thermal.$(MSMSTEPPE)
 
 #TSLIB_EXTERNAL
 TSLIB_EXTERNAL := corgi
@@ -791,9 +792,6 @@ RCS += rcs_service_api.xml
 #IMS Extension module for Android Telephony
 IMS_EXT := ims-ext-common
 IMS_EXT += ConfURIDialer
-
-#Android Telephony library
-#PRODUCT_BOOT_JARS += qtiNetworkLib
 
 #CRDA
 CRDA := crda
@@ -860,7 +858,10 @@ PRODUCT_PACKAGES := \
     wipowerservice \
     Mms \
     QtiDialer \
-    qtiNetworkLib
+    NrNetworkSettingApp \
+    qtiNetworkLib \
+    TestApp5G
+
 
 ifeq ($(TARGET_HAS_LOW_RAM),true)
     DELAUN := Launcher3Go
