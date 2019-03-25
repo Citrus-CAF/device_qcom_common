@@ -38,6 +38,7 @@ QCOM_BOARD_PLATFORMS += msmnile_au
 QCOM_BOARD_PLATFORMS += qcs605
 QCOM_BOARD_PLATFORMS += $(MSMSTEPPE)
 QCOM_BOARD_PLATFORMS += $(TRINKET)
+QCOM_BOARD_PLATFORMS += sdmshrike_au
 
 QSD8K_BOARD_PLATFORMS := qsd8k
 
@@ -415,6 +416,7 @@ LIBCAMERA += camera.msm8996
 LIBCAMERA += camera.msm8998
 LIBCAMERA += camera.apq8098_latv
 LIBCAMERA += camera.sdm660
+LIBCAMERA += camera.trinket
 LIBCAMERA += camera.msm8952
 LIBCAMERA += camera.msm8937
 LIBCAMERA += camera.msm8953
@@ -755,6 +757,7 @@ THERMAL_HAL += thermal.msm8953
 THERMAL_HAL += thermal.msm8937
 THERMAL_HAL += thermal.msmnile
 THERMAL_HAL += thermal.$(MSMSTEPPE)
+THERMAL_HAL += thermal.$(TRINKET)
 
 #TSLIB_EXTERNAL
 TSLIB_EXTERNAL := corgi
@@ -845,6 +848,8 @@ WIGIG += libwigig_pciaccess
 #FD_LEAK
 FD_LEAK := libc_leak_detector
 
+TELEPHONY_DBG := NrNetworkSettingApp
+
 PRODUCT_PACKAGES := \
     AccountAndSyncSettings \
     DeskClock \
@@ -880,8 +885,7 @@ PRODUCT_PACKAGES := \
     a4wpservice \
     wipowerservice \
     Mms \
-    QtiDialer \
-    NrNetworkSettingApp
+    QtiDialer
 
 
 ifeq ($(TARGET_HAS_LOW_RAM),true)
@@ -1002,14 +1006,19 @@ PRODUCT_PACKAGES += android.hidl.manager@1.0-java
 
 PRODUCT_PACKAGES += android.hardware.drm@1.0-impl
 PRODUCT_PACKAGES += android.hardware.drm@1.0-service
-PRODUCT_PACKAGES += android.hardware.drm@1.1-service.widevine
 PRODUCT_PACKAGES += android.hardware.drm@1.1-service.clearkey
+
+ifneq ($(strip $(ENABLE_HYP)),false)
+PRODUCT_PACKAGES += android.hardware.drm@1.1-service.widevine
+endif
+
 ifeq ($(strip $(OTA_FLAG_FOR_DRM)),true)
 PRODUCT_PACKAGES += move_widevine_data.sh
 endif
 PRODUCT_PACKAGES += move_wifi_data.sh
 PRODUCT_PACKAGES += librs_jni
 
+PRODUCT_PACKAGES += init.qti.manifest_sku.sh
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
@@ -1036,6 +1045,8 @@ PRODUCT_PACKAGES_DEBUG := init.qcom.testscripts.sh
 #Add init.qcom.test.rc to PRODUCT_PACKAGES_DEBUG list
 PRODUCT_PACKAGES_DEBUG += init.qcom.test.rc
 PRODUCT_PACKAGES_DEBUG += init.qcom.debug.sh
+
+PRODUCT_PACKAGES_DEBUG += $(TELEPHONY_DBG)
 
 #NANOPB_LIBRARY_NAME := libnanopb-c-2.8.0
 
